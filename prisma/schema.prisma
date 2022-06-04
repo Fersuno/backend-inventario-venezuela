@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model PrecioAlmacen {
+  id       Int        @id @default(autoincrement())
+  rmb      Decimal?   @db.Decimal(8, 2)
+  cif      Decimal    @db.Decimal(8, 2)
+  mnj      Decimal?   @db.Decimal(8, 2)
+  producto Producto[]
+}
+
+model PrecioVenta {
+  id          Int        @id @default(autoincrement())
+  a           Decimal    @db.Decimal(8, 2)
+  aa          Decimal?   @db.Decimal(8, 2)
+  aaa         Decimal?   @db.Decimal(8, 2)
+  detal       Decimal?   @db.Decimal(8, 2)
+  instalacion Decimal    @db.Decimal(8, 2)
+  producto    Producto[]
+}
+
+model Origen {
+  id         Int        @id @default(autoincrement())
+  nombre     String     @db.VarChar(30)
+  porcentaje Int
+  producto   Producto[]
+}
+
+model Categoria {
+  id           Int            @id @default(autoincrement())
+  nombre       String         @db.VarChar(30)
+  subcategoria Subcategoria[]
+  producto     Producto[]
+}
+
+model Subcategoria {
+  id          Int        @id @default(autoincrement())
+  nombre      String     @db.VarChar(30)
+  categoriaId Int
+  categoria   Categoria  @relation(fields: [categoriaId], references: [id])
+  Producto    Producto[]
+}
+
+model Estado {
+  id     Int    @id @default(autoincrement())
+  nombre String @db.VarChar(100)
+  sedes  Sede[]
+}
+
+model Marca {
+  id       Int        @id @default(autoincrement())
+  nombre   String     @db.VarChar(50)
+  Producto Producto[]
+}
+
+model Traslado {
+  id                Int      @id @default(autoincrement())
+  confirmacion      Boolean  @default(false)
+  fechaEnvio        DateTime @default(now())
+  fechaConfirmacion DateTime @db.Date
+  sedeId            Int
+  sedeOrigenId      Int
+  sedeDestinoId     Int
+  sede              Sede     @relation(fields: [sedeId], references: [id])
+  sedeOrigen        Sede     @relation("sedeOrigen", fields: [sedeOrigenId], references: [id], onDelete: Cascade)
+  sedeDestino       Sede     @relation("sedeDestino", fields: [sedeDestinoId], references: [id], onDelete: Cascade)
+}
+
+model Producto {
+  id              Int           @id @default(autoincrement())
+  modelo          String?       @db.VarChar(100)
+  foto            String        @db.VarChar(200)
+  cuenta          Boolean       @default(true)
+  retirado        Boolean       @default(false)
+  cantidad        Int           @db.Integer
+  sedeId          Int
+  marcaId         Int?
+  origenId        Int
+  categoriaId     Int
+  subcategoriaId  Int
+  precioVentaId   Int
+  precioAlmacenId Int
+  sede            Sede[]
+  marca           Marca?        @relation(fields: [marcaId], references: [id])
+  origen          Origen        @relation(fields: [origenId], references: [id])
+  categoria       Categoria     @relation(fields: [categoriaId], references: [id])
+  subcategoria    Subcategoria  @relation(fields: [subcategoriaId], references: [id])
+  precioVenta     PrecioVenta   @relation(fields: [precioVentaId], references: [id])
+  precioAlmacen   PrecioAlmacen @relation(fields: [precioAlmacenId], references: [id])
+}
+
+model Sede {
+  id                 Int        @id @default(autoincrement())
+  nombre             String     @db.VarChar(100)
+  estadoId           Int
+  estado             Estado     @relation(fields: [estadoId], references: [id], onDelete: Cascade)
+  movimientosDestino Traslado[] @relation("sedeDestino")
+  movimientosOrigen  Traslado[] @relation("sedeOrigen")
+  traslados          Traslado[]
+  inventario         Producto[]
+}
