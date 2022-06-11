@@ -1,0 +1,12 @@
+export { AggregatePrecioAlmacenArgs } from "./AggregatePrecioAlmacenArgs";
+export { CreateManyPrecioAlmacenArgs } from "./CreateManyPrecioAlmacenArgs";
+export { CreatePrecioAlmacenArgs } from "./CreatePrecioAlmacenArgs";
+export { DeleteManyPrecioAlmacenArgs } from "./DeleteManyPrecioAlmacenArgs";
+export { DeletePrecioAlmacenArgs } from "./DeletePrecioAlmacenArgs";
+export { FindFirstPrecioAlmacenArgs } from "./FindFirstPrecioAlmacenArgs";
+export { FindManyPrecioAlmacenArgs } from "./FindManyPrecioAlmacenArgs";
+export { FindUniquePrecioAlmacenArgs } from "./FindUniquePrecioAlmacenArgs";
+export { GroupByPrecioAlmacenArgs } from "./GroupByPrecioAlmacenArgs";
+export { UpdateManyPrecioAlmacenArgs } from "./UpdateManyPrecioAlmacenArgs";
+export { UpdatePrecioAlmacenArgs } from "./UpdatePrecioAlmacenArgs";
+export { UpsertPrecioAlmacenArgs } from "./UpsertPrecioAlmacenArgs";

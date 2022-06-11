@@ -1,0 +1,12 @@
+export { AggregateOrigenArgs } from "./AggregateOrigenArgs";
+export { CreateManyOrigenArgs } from "./CreateManyOrigenArgs";
+export { CreateOrigenArgs } from "./CreateOrigenArgs";
+export { DeleteManyOrigenArgs } from "./DeleteManyOrigenArgs";
+export { DeleteOrigenArgs } from "./DeleteOrigenArgs";
+export { FindFirstOrigenArgs } from "./FindFirstOrigenArgs";
+export { FindManyOrigenArgs } from "./FindManyOrigenArgs";
+export { FindUniqueOrigenArgs } from "./FindUniqueOrigenArgs";
+export { GroupByOrigenArgs } from "./GroupByOrigenArgs";
+export { UpdateManyOrigenArgs } from "./UpdateManyOrigenArgs";
+export { UpdateOrigenArgs } from "./UpdateOrigenArgs";
+export { UpsertOrigenArgs } from "./UpsertOrigenArgs";

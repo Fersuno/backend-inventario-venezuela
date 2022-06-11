@@ -1,0 +1,12 @@
+export { AggregateEstadoArgs } from "./AggregateEstadoArgs";
+export { CreateEstadoArgs } from "./CreateEstadoArgs";
+export { CreateManyEstadoArgs } from "./CreateManyEstadoArgs";
+export { DeleteEstadoArgs } from "./DeleteEstadoArgs";
+export { DeleteManyEstadoArgs } from "./DeleteManyEstadoArgs";
+export { FindFirstEstadoArgs } from "./FindFirstEstadoArgs";
+export { FindManyEstadoArgs } from "./FindManyEstadoArgs";
+export { FindUniqueEstadoArgs } from "./FindUniqueEstadoArgs";
+export { GroupByEstadoArgs } from "./GroupByEstadoArgs";
+export { UpdateEstadoArgs } from "./UpdateEstadoArgs";
+export { UpdateManyEstadoArgs } from "./UpdateManyEstadoArgs";
+export { UpsertEstadoArgs } from "./UpsertEstadoArgs";

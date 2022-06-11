@@ -1,0 +1,11 @@
+export { CantidadRelationsResolver } from "./Cantidad/CantidadRelationsResolver";
+export { CategoriaRelationsResolver } from "./Categoria/CategoriaRelationsResolver";
+export { EstadoRelationsResolver } from "./Estado/EstadoRelationsResolver";
+export { MarcaRelationsResolver } from "./Marca/MarcaRelationsResolver";
+export { OrigenRelationsResolver } from "./Origen/OrigenRelationsResolver";
+export { PrecioAlmacenRelationsResolver } from "./PrecioAlmacen/PrecioAlmacenRelationsResolver";
+export { PrecioVentaRelationsResolver } from "./PrecioVenta/PrecioVentaRelationsResolver";
+export { ProductoRelationsResolver } from "./Producto/ProductoRelationsResolver";
+export { SedeRelationsResolver } from "./Sede/SedeRelationsResolver";
+export { SubcategoriaRelationsResolver } from "./Subcategoria/SubcategoriaRelationsResolver";
+export { TrasladoRelationsResolver } from "./Traslado/TrasladoRelationsResolver";

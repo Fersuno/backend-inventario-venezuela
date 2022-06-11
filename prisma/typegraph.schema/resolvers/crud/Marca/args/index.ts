@@ -1,0 +1,12 @@
+export { AggregateMarcaArgs } from "./AggregateMarcaArgs";
+export { CreateManyMarcaArgs } from "./CreateManyMarcaArgs";
+export { CreateMarcaArgs } from "./CreateMarcaArgs";
+export { DeleteManyMarcaArgs } from "./DeleteManyMarcaArgs";
+export { DeleteMarcaArgs } from "./DeleteMarcaArgs";
+export { FindFirstMarcaArgs } from "./FindFirstMarcaArgs";
+export { FindManyMarcaArgs } from "./FindManyMarcaArgs";
+export { FindUniqueMarcaArgs } from "./FindUniqueMarcaArgs";
+export { GroupByMarcaArgs } from "./GroupByMarcaArgs";
+export { UpdateManyMarcaArgs } from "./UpdateManyMarcaArgs";
+export { UpdateMarcaArgs } from "./UpdateMarcaArgs";
+export { UpsertMarcaArgs } from "./UpsertMarcaArgs";

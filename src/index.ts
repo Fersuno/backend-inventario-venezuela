@@ -4,7 +4,7 @@ import { ApolloServer } from "apollo-server";
 import { DateTimeResolver } from "graphql-scalars";
 import { context } from "./context";
 import { GraphQLScalarType } from "graphql";
-import { resolvers } from "@generated/type-graphql";
+import { resolvers } from "../prisma/typegraph.schema";
 
 const app = async () => {
   const schema = await tq.buildSchema({

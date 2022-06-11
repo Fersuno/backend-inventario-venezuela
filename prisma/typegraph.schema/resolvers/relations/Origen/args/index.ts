@@ -1,0 +1,1 @@
+export { OrigenProductoArgs } from "./OrigenProductoArgs";

@@ -4,6 +4,7 @@ generator client {
 
 generator typegraphql {
   provider = "typegraphql-prisma"
+  output   = "./typegraph.schema"
 }
 
 datasource db {
@@ -25,7 +26,7 @@ model PrecioVenta {
   aa          Decimal?   @db.Decimal(8, 2)
   aaa         Decimal?   @db.Decimal(8, 2)
   detal       Decimal?   @db.Decimal(8, 2)
-  instalacion Decimal    @db.Decimal(8, 2)
+  instalacion Decimal?   @db.Decimal(8, 2)
   producto    Producto[]
 }
 
@@ -63,6 +64,15 @@ model Marca {
   Producto Producto[]
 }
 
+model Cantidad {
+  id         Int      @id @default(autoincrement())
+  cantidad   Int
+  sedeId     Int
+  productoId Int
+  sede       Sede     @relation(fields: [sedeId], references: [id])
+  producto   Producto @relation(fields: [productoId], references: [id])
+}
+
 model Traslado {
   id                Int      @id @default(autoincrement())
   confirmacion      Boolean  @default(false)
@@ -83,18 +93,17 @@ model Producto {
   cuenta          Boolean       @default(true)
   retirado        Boolean       @default(false)
   cantidad        Int           @db.Integer
-  sedeId          Int
   marcaId         Int?
   origenId        Int
   categoriaId     Int
-  subcategoriaId  Int
+  subcategoriaId  Int?
   precioVentaId   Int
   precioAlmacenId Int
-  sede            Sede[]
+  Cantidad        Cantidad[]
   marca           Marca?        @relation(fields: [marcaId], references: [id])
   origen          Origen        @relation(fields: [origenId], references: [id])
   categoria       Categoria     @relation(fields: [categoriaId], references: [id])
-  subcategoria    Subcategoria  @relation(fields: [subcategoriaId], references: [id])
+  subcategoria    Subcategoria? @relation(fields: [subcategoriaId], references: [id])
   precioVenta     PrecioVenta   @relation(fields: [precioVentaId], references: [id])
   precioAlmacen   PrecioAlmacen @relation(fields: [precioAlmacenId], references: [id])
 }
@@ -107,5 +116,5 @@ model Sede {
   movimientosDestino Traslado[] @relation("sedeDestino")
   movimientosOrigen  Traslado[] @relation("sedeOrigen")
   traslados          Traslado[]
-  inventario         Producto[]
+  Cantidad           Cantidad[]
 }

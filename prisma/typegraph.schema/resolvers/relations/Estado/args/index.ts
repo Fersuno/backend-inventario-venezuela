@@ -1,0 +1,1 @@
+export { EstadoSedesArgs } from "./EstadoSedesArgs";

@@ -1,0 +1,12 @@
+export { AggregateSubcategoriaArgs } from "./AggregateSubcategoriaArgs";
+export { CreateManySubcategoriaArgs } from "./CreateManySubcategoriaArgs";
+export { CreateSubcategoriaArgs } from "./CreateSubcategoriaArgs";
+export { DeleteManySubcategoriaArgs } from "./DeleteManySubcategoriaArgs";
+export { DeleteSubcategoriaArgs } from "./DeleteSubcategoriaArgs";
+export { FindFirstSubcategoriaArgs } from "./FindFirstSubcategoriaArgs";
+export { FindManySubcategoriaArgs } from "./FindManySubcategoriaArgs";
+export { FindUniqueSubcategoriaArgs } from "./FindUniqueSubcategoriaArgs";
+export { GroupBySubcategoriaArgs } from "./GroupBySubcategoriaArgs";
+export { UpdateManySubcategoriaArgs } from "./UpdateManySubcategoriaArgs";
+export { UpdateSubcategoriaArgs } from "./UpdateSubcategoriaArgs";
+export { UpsertSubcategoriaArgs } from "./UpsertSubcategoriaArgs";

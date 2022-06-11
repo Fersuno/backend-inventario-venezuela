@@ -1,0 +1,59 @@
+import * as TypeGraphQL from "type-graphql";
+import * as GraphQLScalars from "graphql-scalars";
+import { Prisma } from "@prisma/client";
+import { DecimalJSScalar } from "../../scalars";
+import { PrecioAlmacenAvgAggregate } from "../outputs/PrecioAlmacenAvgAggregate";
+import { PrecioAlmacenCountAggregate } from "../outputs/PrecioAlmacenCountAggregate";
+import { PrecioAlmacenMaxAggregate } from "../outputs/PrecioAlmacenMaxAggregate";
+import { PrecioAlmacenMinAggregate } from "../outputs/PrecioAlmacenMinAggregate";
+import { PrecioAlmacenSumAggregate } from "../outputs/PrecioAlmacenSumAggregate";
+
+@TypeGraphQL.ObjectType("PrecioAlmacenGroupBy", {
+  isAbstract: true
+})
+export class PrecioAlmacenGroupBy {
+  @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+    nullable: false
+  })
+  id!: number;
+
+  @TypeGraphQL.Field(_type => DecimalJSScalar, {
+    nullable: true
+  })
+  rmb!: Prisma.Decimal | null;
+
+  @TypeGraphQL.Field(_type => DecimalJSScalar, {
+    nullable: false
+  })
+  cif!: Prisma.Decimal;
+
+  @TypeGraphQL.Field(_type => DecimalJSScalar, {
+    nullable: true
+  })
+  mnj!: Prisma.Decimal | null;
+
+  @TypeGraphQL.Field(_type => PrecioAlmacenCountAggregate, {
+    nullable: true
+  })
+  _count!: PrecioAlmacenCountAggregate | null;
+
+  @TypeGraphQL.Field(_type => PrecioAlmacenAvgAggregate, {
+    nullable: true
+  })
+  _avg!: PrecioAlmacenAvgAggregate | null;
+
+  @TypeGraphQL.Field(_type => PrecioAlmacenSumAggregate, {
+    nullable: true
+  })
+  _sum!: PrecioAlmacenSumAggregate | null;
+
+  @TypeGraphQL.Field(_type => PrecioAlmacenMinAggregate, {
+    nullable: true
+  })
+  _min!: PrecioAlmacenMinAggregate | null;
+
+  @TypeGraphQL.Field(_type => PrecioAlmacenMaxAggregate, {
+    nullable: true
+  })
+  _max!: PrecioAlmacenMaxAggregate | null;
+}

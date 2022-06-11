@@ -1,0 +1,1 @@
+export { PrecioAlmacenProductoArgs } from "./PrecioAlmacenProductoArgs";

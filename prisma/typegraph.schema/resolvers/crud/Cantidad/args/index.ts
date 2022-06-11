@@ -1,0 +1,12 @@
+export { AggregateCantidadArgs } from "./AggregateCantidadArgs";
+export { CreateCantidadArgs } from "./CreateCantidadArgs";
+export { CreateManyCantidadArgs } from "./CreateManyCantidadArgs";
+export { DeleteCantidadArgs } from "./DeleteCantidadArgs";
+export { DeleteManyCantidadArgs } from "./DeleteManyCantidadArgs";
+export { FindFirstCantidadArgs } from "./FindFirstCantidadArgs";
+export { FindManyCantidadArgs } from "./FindManyCantidadArgs";
+export { FindUniqueCantidadArgs } from "./FindUniqueCantidadArgs";
+export { GroupByCantidadArgs } from "./GroupByCantidadArgs";
+export { UpdateCantidadArgs } from "./UpdateCantidadArgs";
+export { UpdateManyCantidadArgs } from "./UpdateManyCantidadArgs";
+export { UpsertCantidadArgs } from "./UpsertCantidadArgs";
